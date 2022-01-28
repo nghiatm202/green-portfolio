@@ -43,7 +43,20 @@ button {
   transition: var(--smooth);
   cursor: pointer;
 }
-
+/* overlay */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 4;
+  display: none;
+}
+#overlay.show {
+  display: initial;
+}
 /* === header === */
 header {
   position: absolute;
@@ -343,5 +356,138 @@ header {
     order: 1;
     width: 45%;
     text-align: initial;
+  }
+}
+
+/* === works === */
+#works {
+  position: relative;
+  padding-top: 10em;
+  overflow-x: hidden;
+}
+
+.works__dec {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-60%);
+  z-index: -1;
+}
+
+.works__dec:nth-child(2) {
+  top: initial;
+  left: initial;
+  right: 0;
+  bottom: 15%;
+  transform: translateX(60%);
+  z-index: -1;
+}
+
+#works h2 {
+  text-align: center;
+  color: var(--gray);
+}
+
+.works__img-single {
+  margin: 2em 0;
+}
+
+.works__img-single:nth-child(odd) {
+  padding-top: 5em;
+}
+
+.works__img-single:nth-child(3) {
+  margin-top: -5em;
+}
+
+.works__btn {
+  text-align: center;
+  margin-top: 8em;
+}
+
+.works__btn button {
+  font-size: 1rem;
+}
+
+@media (min-width: 62em) {
+  #works h2 {
+    margin-bottom: 3em;
+  }
+
+  .works__img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .works__img-single {
+    margin: 0 5em;
+    width: 35%;
+  }
+
+  .works__img-single:nth-child(3) {
+    margin-top: 0;
+  }
+}
+
+/* === footer === */
+#footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.footer__img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(25%);
+  z-index: -1;
+}
+
+.footer__heading {
+  text-align: center;
+  margin: 0 auto;
+  color: var(--gray);
+  max-width: 400px;
+}
+
+.footer__contact {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer__contact a {
+  color: var(--gray);
+  text-decoration: none;
+}
+
+.footer__dec {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateX(-45%);
+}
+
+@media (min-width: 62em) {
+  .footer__img {
+    top: -15%;
+    right: 0;
+    transform: translateX(32%);
+    width: 60%;
+  }
+
+  .footer__heading {
+    text-align: initial;
+    margin: 0;
+  }
+
+  .footer__contact {
+    display: flex;
+    justify-content: space-between;
   }
 }
